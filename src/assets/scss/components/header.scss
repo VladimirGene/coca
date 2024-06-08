@@ -1,0 +1,97 @@
+.header {
+    padding: 26px 0 22px;
+
+    &__container {
+        @include flex-all-between;
+    }
+
+    &__right {
+        @include flex-all-center;
+        gap: 111px;
+    }
+
+    &__switcher {
+        position: relative;
+        border-radius: 13px;
+        width: 63px;
+        height: 27px;
+        background-color: var(--neutral-color-130);
+        transform: translateY(8px);
+        transition: background-color var(--transition);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            display: inline-block;
+            border-radius: 50%;
+            width: 23px;
+            height: 23px;
+            background-color: var(--neutral-color-120);
+            transition:
+                left var(--transition),
+                background-color var(--transition);
+        }
+
+        &-text {
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            font-weight: 600;
+            line-height: 150%;
+            text-align: center;
+            color: #000;
+            transform: translateX(-50%);
+        }
+
+        &-checkbox {
+            appearance: none;
+        }
+
+        &:has(&-checkbox:checked) {
+            background-color: var(--neutral-color-60);
+
+            &::before {
+                left: 38px;
+                background-color: var(--primary-color-50);
+            }
+        }
+    }
+
+    .nav {
+        &__list {
+            @include flex-all-center;
+            gap: 32px;
+        }
+
+        &__link {
+            position: relative;
+            font-weight: 500;
+            line-height: 162%;
+            color: var(--neutral-color-100);
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 1.5px;
+                background-color: var(--neutral-color-100);
+                opacity: 0;
+                visibility: hidden;
+                transition:
+                    opacity var(--transition),
+                    visibility var(--transition);
+            }
+
+            &:hover {
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
