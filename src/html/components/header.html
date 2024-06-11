@@ -1,7 +1,7 @@
 <header class="header">
     <h1 class="hidden">Coca - Digital Marketing Website. Home page</h1>
     <div class="container header__container">
-        <a href="/" aria-label="Home page">
+        <a class="header__logo" href="/" aria-label="Home page">
             <svg
                 width="140"
                 height="66"
@@ -32,27 +32,40 @@
                 />
             </svg>
         </a>
-        <div class="header__right">
+        <div class="header__right" data-burger="menu">
             <nav class="nav header__nav">
                 <ul class="nav__list">
                     <li class="nav__item">
                         <a class="nav__link text-p-default" href="/">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link text-p-default" href="/about.html">About</a>
+                        <a class="nav__link text-p-default" href="/about.html"
+                            >About</a
+                        >
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link text-p-default" href="/blog.html">Blog</a>
+                        <a class="nav__link text-p-default" href="/blog.html"
+                            >Blog</a
+                        >
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link text-p-default" href="/pricing.html">Pricing</a>
+                        <a class="nav__link text-p-default" href="/pricing.html"
+                            >Pricing</a
+                        >
                     </li>
                 </ul>
             </nav>
             <label class="header__switcher">
                 <span class="header__switcher-text text-p-default">Dark</span>
-                <input class="header__switcher-checkbox" type="checkbox">
+                <input
+                    class="header__switcher-checkbox"
+                    type="checkbox"
+                    data-theme-switcher
+                />
             </label>
         </div>
+        <button class="burger" data-burger="btn" aria-label="Burger menu">
+            <span class="burger__line"></span>
+        </button>
     </div>
 </header>
