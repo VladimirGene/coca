@@ -1,5 +1,6 @@
 .heading {
     &-h1 {
+        font-weight: 900;
         font-size: 72px;
     }
 
@@ -26,24 +27,59 @@
     &-h5 {
         line-height: 120%;
     }
-    
-    .text {
-        &-p {
-            &-large {
+}
+
+.text {
+    &-p {
+        &-subtitle {
+            @include flex-align-center;
+            gap: 27px;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 131%;
+            letter-spacing: -0.03em;
+            color: var(--neutral-color-100);
+
+            @include tablet {
+                font-size: 28px;
+            }
+
+            @include mobile {
                 font-size: 24px;
             }
 
-            &-medium {
-                font-size: 18px;
+            @include small-mobile {
+                font-size: 20px;
             }
 
-            &-default{
-                font-size: 16px;
-            }
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 76px;
+                height: 1px;
+                background-color: var(--neutral-color-100);
+                transform: translateY(-20px);
 
-            &-small {
-                font-size: 14px;
+                @include mini-desktop {
+                    display: none;
+                }
             }
+        }
+
+        &-large {
+            font-size: 24px;
+        }
+
+        &-medium {
+            font-size: 18px;
+        }
+
+        &-default {
+            font-size: 16px;
+        }
+
+        &-small {
+            font-size: 14px;
         }
     }
 }
