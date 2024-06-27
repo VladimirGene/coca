@@ -1,13 +1,12 @@
 .hero {
-    position: relative;
     padding: 87px 0 141px;
 
     @include mini-desktop {
-        padding: 67px 0 121px;
+        padding: 77px 0 121px;
     }
 
     @include mobile {
-        min-height: calc(100dvh - 128px);
+        min-height: calc(100dvh - 109px);
     }
 
     &::before {
@@ -63,9 +62,6 @@
 
     &__container {
         @include flex-justify-between;
-        position: relative;
-        gap: 15px;
-        flex-wrap: wrap;
         align-items: flex-end;
 
         @include mini-desktop {
@@ -77,7 +73,9 @@
     }
 
     &__left {
-        max-width: 600px;
+        @include mini-desktop {
+            max-width: 617px;
+        }
     }
 
     &__title {
@@ -110,6 +108,12 @@
 
     &__subtitle {
         margin-bottom: 69px;
+
+        & br {
+            @include mini-desktop {
+                display: none;
+            }
+        }
     }
 
     &__form {
@@ -168,6 +172,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-right: 0;
         }
     }
 
@@ -182,6 +187,10 @@
         &-img {
             @include small-desktop {
                 max-width: 280px;
+            }
+
+            @include small-mobile {
+                max-width: 240px;
             }
         }
 
@@ -234,6 +243,10 @@
         text-align: left;
         background: #000;
 
+        @include mobile {
+            display: none;
+        }
+
         &-head {
             &-th {
                 font-weight: 600;
@@ -244,10 +257,11 @@
         }
 
         &-body {
-            &-th {
+            &-td {
                 font-weight: 700;
                 font-size: 20px;
                 line-height: 130%;
+                white-space: nowrap;
                 color: #fff;
 
                 &:nth-child(1) {
